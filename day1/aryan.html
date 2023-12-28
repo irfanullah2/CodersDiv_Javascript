@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q</title>
+</head>
+<body>
+    <input type="text" id="searchcity" placeholder="Enter city name " oninput="searchcity()" >
+    <table>
+        <thead>
+            <tr>
+                <th>
+                    City
+                </th>
+            </tr>
+        </thead>
+        <tbody id="tableBody">
+
+        </tbody>
+    </table>
+
+    <script>
+        const cities = [
+            { name : 'New York'},
+            { name : 'New York1'},
+            { name : 'New York2'},
+            { name : 'New York3'},
+            { name : 'New York4'},
+        ]
+
+   const searchcity =()=>{
+    const inputuser = document.getElementById('searchcity').Value.toLowerCase();
+    const searched = cities.filter(c=>c.name.toLocaleLowerCase()===inputuser)
+    
+   }
+   
+   const searchfunc =()=>{
+
+    const tableBody = document.getElementById('tableBody')
+
+    var  tr = ''
+    cities.map(c=>{
+        tr+= `<tr>
+             <td>${c.name}</td>
+            </tr>`
+            // const row = tableBody.insertRow();
+            // const cell = row.insertCell();
+            // cell.textContent = c.name
+        })
+tableBody.innerHTML = tr
+}
+        searchfunc(cities)
+
+    </script>
+</body>
+</html>

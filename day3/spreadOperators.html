@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spread Operators</title>
+</head>
+<body>
+    <script>
+        // // spread and rest operator 
+        const sum = ( total,...args)=>{
+            var sum = 0
+            for(let i in args){
+                sum = sum+args[i]
+            } 
+        console.log(`The ${total} is  ${sum}`)
+        }
+         let total = 'Addition of Array '
+        const numbers = [1 , 3 , 45 , 4, 5]
+        sum( total,...numbers)
+
+   
+   
+     // // DEEP AND SHALLOW COPY 
+    // SHALLOW COPY MEANS COPY OF FIRST LEVEL AND REFERENCE TO THE NESTED LEVELS
+    // DEEP COPY IS THE ORIGIONAL COPY OF OBJECT AND DOES NOT GIVE REFERENCE 
+
+//     // Deep copy
+//    const obj1 = {name : 'irfan' , age : 20}
+//    const obj2 = {obj1}
+ 
+//    const obj3 = {obj1 ,obj2}
+
+//    // it will change the age of obj2 also 
+//    obj1.age = 23
+   
+//    console.log(obj2)
+//    console.log(obj1)
+//    console.log(obj3)
+ 
+
+// // Shallow Copy is 1 level copy 
+  
+//    const obj1 = {name:'irfan' , age:{a:20}}
+//    const obj2 = {...obj1}
+   
+//    obj1.name='ahtisham'// name will not be changed for obj2
+
+//    // age for obj2 also will be  changed 
+//    obj1.age.a = 23
+
+//    const obj4 = {name1:'rizwan' , age1:{a:22}}
+
+//    // obj2 ky name age is lye ni dilhaa rha unki keys obj1 ki trhan hian 
+//   // concatination 
+//    obj3 = {age3:30,...obj1 ,...obj2, ...obj4 , name2:'amjad' }
+
+//    console.log(obj2)
+//     console.log(obj1)
+//    console.log(obj3)
+
+
+
+//  const originalArray = [[1, 2, 3, 4], 12];
+// const copiedArray = [...originalArray];
+
+// Bcz array ky ander array hai so nested level ajayga 
+// originalArray[0].push(100);
+
+// console.log(originalArray); // Output: [[1, 2, 3, 4, 100], 12]
+//  console.log(copiedArray); 
+
+
+
+
+
+
+    </script>
+</body>
+</html>

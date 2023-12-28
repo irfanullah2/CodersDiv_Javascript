@@ -1,0 +1,66 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 20px;
+}
+
+#main_table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+#main_table th, #main_table td {
+    border: 1px solid #e3dede;
+    padding: 10px;
+    text-align: left;
+}
+
+#main_table th {
+    background-color: #d1cfcf;
+    cursor: pointer;
+}
+
+#main_table th:hover {
+    background-color: #9d9a9a;
+}
+
+#total_salary {
+    margin-top: 10px;
+}
+
+#page_footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#prev_button,
+#next_button {
+    padding: 10px;
+    cursor: pointer;
+    background-color: #174ae3;
+    color: white;
+    border: none;
+}
+
+#prev_button:hover,
+#next_button:hover {
+    background-color: #333633;
+}
+
+#pagination_div {
+    display: flex;
+}
+
+#pagination_div button {
+    margin: 0 5px;
+    padding: 8px;
+    cursor: pointer;
+    background-color: #3498db;
+    color: white;
+    border: none;
+}
+
+#pagination_div button:hover {
+    background-color: #121313;
+}

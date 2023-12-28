@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rest Operator</title>
+</head>
+<body>
+    <script>
+        const sum=(name , ...args)=>{
+            var sum = 0
+            for(let i in args){
+                sum+=args[i]
+            
+            }
+           console.log(`Total Sum is ` , sum)
+        //    console.log(`${name} has done ${clss} recently`)
+        }
+    
+          sum('irfan' , 2 , 3 , 5)
+        //  sum(2 , 3 , 5)
+        //  sum(2 , 3 , 5 , 10)
+        //  sum(20 , 3 , 5 , 20,  10)
+         
+    </script>
+</body>
+</html>

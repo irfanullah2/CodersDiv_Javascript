@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+   <ul id="show"></ul>
+
+
+   <!-- write a program that add kryga 2 arrays then show the resultant array in the webpage -->
+    <script>
+        num1 = [2 ,3, 5  , 6,67]
+        num2 = [...num1]
+        
+        num3 =[30, ...num1 , ...num2 , 50 , 100] 
+
+        // console.log(...num2)
+        // console.log(...num3)
+
+       const ul = document.getElementById('show');
+        ul.innerHTML = ''
+
+        var  li =''
+        num3.map(n3=>{
+            li+=`<li>${n3}</li>`
+            return li
+        })
+        ul.innerHTML = li
+        
+
+        // const max = Math.max(...num1)
+        // console.log(max)
+        // const min = Math.min(...num3)
+        // console.log(min)
+
+
+
+
+
+
+    </script>
+</body>
+</html>

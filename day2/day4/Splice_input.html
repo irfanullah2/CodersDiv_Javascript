@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Splice using Input field</title>
+</head>
+<body>
+
+    <label for="inputindex">Enter the Index :</label>
+    <input  type="number" id="inputindex" placeholder="Enter Index for start ">
+    <br>
+    <label for="inputindexdel">Enter the Index :</label>
+    <input  type="number" id="inputindexdel" placeholder="Enter Index  for delete">
+    <br>
+    <label for="inputstring">Enter the Index :</label>
+    <input  type="text" id="inputstring" placeholder="Enter String to add ">
+    <br>
+    <button id="btnindex">Splice</button>
+    <!-- <button id="btnstr">Add String</button> -->
+
+<div></div>
+ 
+<h2 id="result"></h2>
+    <script>
+
+const names = ['irfan' , 'ali ','don' , 'ahmad' , 'qamar' ,]
+
+ const btnhandler =()=>{
+    const index = document.getElementById('inputindex').value
+    const indexstr = document.getElementById('inputstring').value
+    const indexdel = document.getElementById('inputindexdel').value
+
+    // const index = parseInt(inputindex)
+
+    const result = document.getElementById('result')
+    result.innerHTML = ''
+    if(index<=names.length )
+    {
+        names.splice(index ,indexdel , indexstr )
+        console.log(names)
+        result.innerHTML = names
+        
+    }
+    else{
+       result.innerHTML = 'Invalid Index'
+    }
+}
+
+// const addstringhandler =()=>{
+//     const index = document.getElementById('inputstring').value
+
+
+// }
+
+
+document.getElementById('btnindex').addEventListener('click' ,btnhandler)
+// document.getElementById('btnstr').addEventListener('click' ,addstringhandler )
+
+
+    </script>
+</body>
+</html>

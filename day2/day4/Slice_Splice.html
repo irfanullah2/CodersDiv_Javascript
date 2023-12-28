@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slice and Splice methods of array </title>
+</head>
+<body>
+    
+     <button id="sliceButton">Slice </button> 
+     <!-- <input  id="spliceinput"> -->
+    
+    
+
+   <script>
+    
+   
+    //  Buttun click//
+     const namesArray = ['irfan' , 'rizwan' , 'ahmad' , 'qamar ' , 'ali']
+     
+     const slicemethod =()=>{
+         const newnames = namesArray.slice(0 , 3)
+         console.log(namesArray)
+         console.log(newnames)   
+ }
+    document.getElementById('sliceButton').addEventListener('click' , slicemethod)
+     
+
+// const splicemethod =()=>{
+//     namesArray.splice(2 ,2 , 'irfan2343' , 'Ali ')
+//     console.log(namesArray)
+// }
+
+
+
+// const spinput = document.getElementById('spliceinput')
+// spinput.addEventListener('change' , splicemethod)
+       
+
+//        const names = ['irfan' , 'rizwan' , 'ahmad' , 'qamar ' , 'ali']
+
+//     // SLICE METHOD TUKRA UTHATA HAI ARRAY KA AUR 1 NEW ARRAY RETURN KRTA HAI 
+//     // slice(start , end)
+//     const newnames =  names.slice(1 ,7)
+//     console.log(names)
+//     console.log(newnames)
+
+
+// // SPLICE METHOD INSERT IN EXIXTING ARRAY AND CAM ALSO DELETE FROM EXIXTING ARRAY 
+// // IT DOES NOT RETURN THE NEW ARRAY 
+
+// // splice( index , delete , values  )
+
+// console.log(names)
+// names.splice(1 , 0 , 'QMARA TEA ' , 'ALI BAJWA ')
+// console.log(names)
+// names.splice(1 ,3 )
+// console.log(names)
+
+
+
+
+
+
+   </script>
+
+
+</body>
+</html>

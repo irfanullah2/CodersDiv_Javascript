@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promises</title>
+</head>
+<body>
+    <script>
+    
+    // promises has 3 states 
+    // 1. Pending 2. Fulfilled 3. Rejected
+    // after fulfiled resolve is called 
+    // after rejected reject is called 
+    // these are callback function
+    //then for resolve
+    // catch for reject
+
+const mul = (a , b)=>{
+    return  new Promise((resolve, reject)=>{
+    let c = a*b
+    if(a && b){
+        resolve(c)
+    }
+    else{
+        reject(err)
+    }
+
+})
+}
+
+const res =  mul(2 ,10)
+    console.log(res)
+    res
+    .then((result)=>{
+        console.log(`Multiplication hu gai hai bro ${result} ` )
+    })
+    .catch((err)=>{
+console.log(`Multiplication ni hui try again ${err}`)
+    })
+    </script>
+    
+</body>
+</html>

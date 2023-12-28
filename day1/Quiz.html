@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Table</title>
+  
+</head>
+<body>
+
+    <input type="text" id="searchInput" oninput="searchByName()" placeholder="Type a name">
+
+  <table id="employeetable">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>City</th>
+      </tr>
+    </thead>
+    <tbody id="tableBody">
+     
+    </tbody>
+  </table>
+
+  <script>
+    
+    const employees = [
+      { name: 'irfan', age: 25, city: 'lahore' },
+      { name: 'qamar', age: 30, city: 'lahore' },
+      { name: 'ali', age: 28, city: 'lahore' },
+    ];
+
+    function makeTable(emp) {
+      const tableBody = document.getElementById('tableBody');
+      tableBody.innerHTML = '';
+
+      var tr = '';
+      emp.map(e => {
+        // const row = tableBody.insertRow();
+        // console.log(tableBody)
+      
+        tr += `<tr>
+            <td>${e.name}</td>
+            <td>${e.age}</td>
+            <td>${e.city}</td>
+          </tr>`;
+
+        // Object.values(e).map(value => {
+        //  const cell = row.insertCell();
+        //  console.log(cell)
+        //  cell.textContent = value;
+        // });
+      });
+
+      tableBody.innerHTML = tr;
+    }
+    function searchByName() {
+      const searchInput = document.getElementById('searchInput').value.toLowerCase();
+      const searchemployee = employees.filter(emp => emp.name.toLowerCase().includes(searchInput));
+      makeTable(searchemployee);
+    }
+
+    makeTable(employees);
+  </script>
+
+</body>
+</html>

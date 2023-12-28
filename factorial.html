@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>factorial</title>
+</head>
+<body>
+    
+    <h3 id="show"></h3>
+    <script>
+        let no = 7
+        const factorial =(no)=>{
+            if(no==1 || no==0)
+            return 1
+        return no*factorial(no-1)
+        }
+        const fact = factorial(no)
+        console.log(fact)
+
+        const h1 = document.getElementById('show')
+        h1.innerHTML = `The Fcatorial of ${no} is ${fact}`
+        
+    </script>
+</body>
+</html>

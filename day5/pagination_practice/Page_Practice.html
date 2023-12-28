@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagination</title>
+    <link rel="stylesheet" href="page_pagunation.css">
+</head>
+<body>
+    <table id="main_table">
+        <thead>
+            <th id="set_by_id" >ID</th>
+            <th id="set_name_order">NAME</th>
+            <th id="set_order">SALARY</th>
+        </thead>
+        <tbody id="table_body">
+
+        </tbody>
+    </table>
+    <h3 id="total_salary"></h3>
+
+
+    <footer id="page_footer">
+
+        <button id="prev_button">Previos</button>
+        <div id="pagination_div" ></div>
+        <button id="next_button">Next</button>
+
+    </footer>
+
+
+    <script>
+       
+const Employees = [
+    {id :1  , name: 'IRFAN' , salary: 200 },
+    {id :2  , name: 'RIZWAN' , salary: 2001 },
+    {id :3  , name: 'UMAIR' , salary: 2002},
+    {id :4  , name: 'AHMAD' , salary: 2004 },
+    {id :5  , name: 'ASAD' , salary: 3200 },
+    {id :6  , name: 'ALI' , salary: 200 },
+    {id :7  , name: 'UZAIR' , salary: 2001 },
+    {id :8  , name: 'SADAAM' , salary: 2002},
+    {id :9  , name: 'ASLAM' , salary: 2004 },
+    {id :10  , name: 'KABIR' , salary: 3200 },
+    {id :11  , name: 'MUJTABA' , salary: 200 },
+    {id :12  , name: 'SALEEM' , salary: 2001 }, 
+    {id :13  , name: 'NASEER' , salary: 2002},
+    {id :14  , name: 'JAVED' , salary: 2004 },
+    {id :15  , name: 'MAJID' , salary: 3200 },
+      
+]
+
+        var items = 4
+        var curPage = 1
+
+const showtable=()=>{
+
+    const tablebody = document.getElementById('table_body')
+    tablebody.innerHTML = ''
+
+    const totalsalary = document.getElementById('total_salary')
+    totalsalary.innerHTML = ''
+
+    var tr = ''
+    var totalSalary = 0
+ 
+        const startindex = (curPage-1)*items
+        const endindex = startindex + items
+        const slicedEmployes = Employees.slice(startindex , endindex)
+
+slicedEmployes.map(e=>{
+    totalSalary += e.salary
+    tr+=`<tr>
+        <td>${e.id}</td>
+        <td>${e.name}</td>
+        <td>${e.salary}</td>
+        </tr>`
+        return tr
+})
+
+tablebody.innerHTML = tr
+totalsalary.innerHTML = totalSalary
+
+}
+
+var setorder = null
+const setbysalary =()=>{
+   if(setorder == null || setorder == 'desc' ){
+    const sortedname = Employees.sort((a, b) =>  b.salary - a.salary);
+    setorder = 'asc'
+    showtable(sortedname)
+   }
+   else{
+    const sortedname = Employees.sort((a,b)=> a.salary - b.salary  )
+    setorder = 'desc'
+    showtable(sortedname)
+   }
+}
+
+var setname = ''
+const setbyname=()=>{
+    if(setname=='' || setname=='desc')
+    {
+        const sortedname = Employees.sort((a, b) => a.name.localeCompare(b.name));
+        showtable(sortedname)
+        setname = 'asc'
+    }
+    else{
+        const sortedname = Employees.sort((a, b) => b.name.localeCompare(a.name));
+        showtable(sortedname)
+        setname = 'desc'
+
+    }
+}
+
+var sortedid = null
+const setbyid=()=>{
+    if(sortedid=='' || sortedid=='desc')
+    {
+        const sortedID = Employees.sort((a, b) => b.id - a.id );
+        showtable(sortedID)
+        sortedid = 'asc'
+    }
+    else{
+        const sortedID = Employees.sort((a, b) => a.id - b.id);
+        showtable(sortedID)
+        sortedid = 'desc'
+
+    }
+}
+
+const page_div = document.getElementById('pagination_div')
+page_div.innerHTML = ''
+
+
+const max_page = Math.ceil(Employees.length / items);
+
+if (max_page > 1) {
+    for (let i = 1; i <= max_page; i++) {
+        const btn = document.createElement('button');
+        btn.innerText = i;
+        btn.addEventListener('click', () => {
+            curPage = i;
+            showtable(Employees);
+        });
+        page_div.appendChild(btn);
+    }
+}
+
+document.getElementById('prev_button').addEventListener('click' , ()=>{
+    if(curPage>1){
+        curPage--;
+        showtable(Employees)
+    }
+ })
+
+ document.getElementById('next_button').addEventListener('click' , ()=>{
+     const max_page = Math.ceil(Employees.length /items )
+    if(curPage<max_page){
+        curPage++;
+        showtable(Employees)
+    }
+ })
+
+
+const set_by_id = document.getElementById('set_by_id')
+set_by_id.addEventListener('click' , setbyid)
+
+const set_name_order = document.getElementById('set_name_order')
+set_name_order.addEventListener('click' , setbyname)
+
+const set_order = document.getElementById('set_order')
+set_order.addEventListener('click' , setbysalary)
+showtable(Employees)
+
+ </script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+/* Add this to your pagination.css file or in a <style> tag in the head of your HTML */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4; /* Set your background color */
+}
+
+#main_table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+#main_table th, #main_table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+#main_table th {
+    background-color: #333;
+    color: white;
+}
+
+#main_table th:hover {
+    cursor: pointer;
+}
+
+#tablebody tr:hover {
+    background-color: #a9a4a4;
+}
+
+#footer {
+    text-align: center;
+    margin-top: 20%;
+}
+
+#prevbutton, #nextbutton {
+    background-color: #f3ecec;
+    
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+#prevbutton:hover, #nextbutton:hover {
+    background-color: #555;
+}
+
+#pagination_container {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+#pagination_container button {
+    background-color: #f7f1f1;
+    
+    padding: 8px 12px;
+    border: none;
+    cursor: pointer;
+}
+
+#pagination_container button:hover {
+    background-color: #555;
+}

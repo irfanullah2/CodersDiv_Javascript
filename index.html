@@ -1,0 +1,106 @@
+
+
+<!-- Program 1 of displaying the record using Seacrhbar  -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>W3 schools</title>
+ 
+</head>
+<body>
+  
+    <label for="searchInput">Search by Name:</label>
+  <input type="text" id="searchInput" oninput="searchByName()" placeholder="Type a name">
+
+
+  <table id="emplyeetable">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>City</th>
+      </tr>
+    </thead>
+    <tbody id="tableBody"></tbody>
+  </table>
+
+    <script>
+        employees =  [
+      { name: 'irfan', age: 25, city: 'lahore' },
+      { name: 'qamar', age: 30, city: 'lahore' },
+      { name: 'ali', age: 28, city: 'lahore' },
+      { name: 'irfan', age: 25, city: 'lahore' },
+     
+    ];
+
+    const tablefunc =(emp)=>{
+        const tableBody = document.getElementById('tableBody');
+        tableBody.innerHTML = ''
+
+        var tr = ''
+        emp.map(e=>{
+           tr+=`<tr>
+            <td>${e.name}</td>
+            <td>${e.age}</td>
+            <td>${e.city}</td>
+            </tr>`;
+            return tr
+          })
+          tableBody.innerHTML = tr
+        }
+
+    function searchByName() 
+      {
+     
+      const searchInput = document.getElementById('searchInput').value.toLowerCase(); 
+      const searched = employees.filter(e=>e.name.toLowerCase()==searchInput)
+      tablefunc(searched);
+      
+      }
+    
+      tablefunc(employees);
+
+
+    </script>
+ 
+</body>
+</html> -->
+
+
+
+<!-- write a program that multipy the array with 10% -->
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+
+<script>
+ num = [2 , 4 , 5 , 10 , 12, 6]
+
+ const tenpercent=(num)=>{
+   return num.map(n=>{
+     return (n+n*.1)
+    })
+  }
+
+const tenp = tenpercent(num)
+console.log(num)
+console.log(tenp)
+</script>
+
+
+</body>
+</html> -->
+ 
+
+
+
